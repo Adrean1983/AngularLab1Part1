@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <section ng-controller="TodoController as list">
+
+        <section ng-repeat="item in list.tasks track by $index">
+            <p ng-class="{completed: item.completed}">1. {{ item.task }}</p>
+            <p> {{ item.completed }}</p>
+
+        </section>
+
+    </section>
+
+    <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
+    <script src="scripts/module.js"></script>
+    <script src="scripts/ctrl.js"></script>
+</body>
+</html>
