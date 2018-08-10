@@ -21,7 +21,7 @@ function TodoController() {
         },
         {
             task: "Meal Prep",
-            completed: false
+            completed: true
         }
     ];
     // vm.addTasks = (newItem) => {
@@ -30,10 +30,7 @@ function TodoController() {
     //         completed: false
     //     })
     // }
-
 }
-
-
 angular
     .module("todoApp")
     .controller("TodoController", TodoController);

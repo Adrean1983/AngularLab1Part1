@@ -19,7 +19,9 @@
         </section>
         <input type="text" placeholder="Filter your to-dos">
         <ol>
-            <li ng-repeat="item in list.tasks track by $index" ng-class="{completed: item.completed}"><button type="button" class="btncomplete" ng-if="!item.completed">Complete</button>{{ item.task }}<i class="material-icons">clear</i></li>
+            <li ng-repeat="item in list.tasks track by $index">
+                <div class="libox" ng-class="{completed: item.completed}"><button type="button" class="btncomplete" ng-if="!item.completed">Complete</button>{{ item.task }}<i class="material-icons">clear</i></div>
+            </li>
         </ol>
         <input type="text" placeholder="Add your to do">
         <button type="button" class="btnadd">Add</button>

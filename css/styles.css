@@ -20,10 +20,11 @@ body {
     border-radius: 5px;
     margin: 10% auto;
 }
+
 .boxtitle {
-    /* display: flex; */
     margin: 3%;
 }
+
 input {
     margin: 3% 3%;
     border-radius: 5px;
@@ -32,6 +33,7 @@ input {
     padding: 0px 5px;
     color: black;
 }
+
 ::placeholder {
     color: #bbb;
 }
@@ -45,12 +47,15 @@ ol {
 li {
     list-style-position: inside;
     padding: 5px;
- }
+}
 
-li:hover {
+.libox {
+    display: inline-block;
+    width: 95%;
+}
+.libox:hover {
     background-color:#eee;
- }
-
+}
 
 .completed {
     text-decoration:line-through;
@@ -66,21 +71,17 @@ li:hover {
     text-decoration: none;
     margin-right: 3%;
 }
-/* #closecross {
-    float: right;
-    margin-right: 3%;
-    text-align: center;
-    padding-top: 6px;
-} */
+
 .material-icons {
     float: right;
     margin-right: 3%;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 4px;
 }
+
 li:hover .material-icons {
     color: #ff0000;
- }
+}
 
 .btnadd {
     text-decoration: none;
@@ -91,10 +92,10 @@ li:hover .material-icons {
     padding: 10px;
     margin: 0% 3% 5% 3%;
 }
+
 .btnadd:hover {
     background-color: #ff1493;
 }
-
 
 @media only screen and (min-width: 480px) {
     .main {
