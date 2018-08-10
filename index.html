@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
-    <section ng-controller="TodoController as list">
 
-        <section ng-repeat="item in list.tasks track by $index">
-            <p ng-class="{completed: item.completed}">1. {{ item.task }}</p>
-            <p> {{ item.completed }}</p>
-
+    <section class="main" ng-controller="TodoController as list">
+        <section class="boxtitle">
+            <h2>TODO List</h2>
+            <p>A place to store the things you have to do!</p>
         </section>
-
+        <input type="text" placeholder="Filter your to-dos">
+        <ol>
+            <li ng-repeat="item in list.tasks track by $index" ng-class="{completed: item.completed}"><button type="button" class="btncomplete" ng-if="!item.completed">Complete</button>{{ item.task }}<i class="material-icons">clear</i></li>
+        </ol>
+        <input type="text" placeholder="Add your to do">
+        <button type="button" class="btnadd">Add</button>
     </section>
-
+    
     <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
     <script src="scripts/module.js"></script>
     <script src="scripts/ctrl.js"></script>
