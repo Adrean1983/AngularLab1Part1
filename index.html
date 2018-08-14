@@ -17,14 +17,15 @@
             <h2>TODO List</h2>
             <p>A place to store the things you have to do!</p>
         </section>
-        <input type="text" placeholder="Filter your to-dos">
+        <input type="text" placeholder="Filter your to-dos" ng-model="search.task" >
         <ol>
-            <li ng-repeat="item in list.tasks track by $index">
-                <div class="libox" ng-class="{completed: item.completed}"><button type="button" class="btncomplete" ng-if="!item.completed">Complete</button>{{ item.task }}<i class="material-icons">clear</i></div>
+            <li ng-repeat="item in list.tasks | filter: search">
+                <div class="libox" ng-class="{completed: item.completed}">
+                <button type="button" class="btncomplete" ng-if="!item.completed" ng-click="list.completeTask($index, item.completed);">Complete</button>{{ item.task }}<i class="material-icons" ng-click="list.removeTask($index)">clear</i></div>
             </li>
         </ol>
-        <input type="text" placeholder="Add your to do">
-        <button type="button" class="btnadd">Add</button>
+        <input type="text" placeholder="Add your to do" ng-model="list.tasks.task">
+        <button type="button" class="btnadd" ng-click="list.addTask(list.tasks.task); list.tasks.task =''">Add</button>
     </section>
     
     <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>

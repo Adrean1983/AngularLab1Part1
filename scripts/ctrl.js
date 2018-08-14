@@ -24,12 +24,19 @@ function TodoController() {
             completed: true
         }
     ];
-    // vm.addTasks = (newItem) => {
-    //     vm.tasks.shift({
-    //         task: newItem.task,
-    //         completed: false
-    //     })
-    // }
+    vm.addTask = (task) => {
+        vm.tasks.push ({
+            task: task,
+            completed: false
+        });
+    }
+    vm.removeTask = (index) => {
+        vm.tasks.splice(index, 1);
+    }
+    vm.completeTask = (index, completed) => {
+        vm.tasks[index].completed = true;
+        
+    }
 }
 angular
     .module("todoApp")
